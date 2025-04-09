@@ -1,20 +1,56 @@
 package com.example.unipump
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class TelaInicial : AppCompatActivity() {
+
+    private lateinit var btnAluno: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        Log.d("CicloDeVida", "onCreate chamado")
         setContentView(R.layout.activity_tela_inicial)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        // Inicializa os componentes da UI
+        btnAluno = findViewById(R.id.btnAluno)
+
+        // Configura os eventos
+        configurarEventos()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("CicloDeVida", "onStart chamado")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("CicloDeVida", "onResume chamado")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("CicloDeVida", "onPause chamado")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("CicloDeVida", "onStop chamado")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("CicloDeVida", "onDestroy chamado")
+    }
+
+    private fun configurarEventos() {
+        btnAluno.setOnClickListener {
+            val intent = Intent(this, LoginAluno::class.java)
+            startActivity(intent)
         }
     }
 }

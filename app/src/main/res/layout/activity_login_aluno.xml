@@ -1,123 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#004DFF"
-    android:padding="24dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Botão de voltar -->
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voltar"
-        android:backgroundTint="#2A2A2A"
-        android:textColor="#FFFFFF"
-        android:padding="8dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp" />
-
-    <!-- Logo + texto acima da caixa branca -->
-    <LinearLayout
-        android:id="@+id/headerLogo"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="64dp">
+        android:background="#004DFF"
+        android:padding="24dp">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/logo_unipump_nobk"
-            android:contentDescription="Logo"
-            android:tint="#FFFFFF"
-            android:layout_gravity="center" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="UniPump"
-            android:textSize="18sp"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center" />
-    </LinearLayout>
-
-    <!-- Caixa branca central com campos -->
-    <LinearLayout
-        android:id="@+id/containerLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:background="@android:color/white"
-        android:elevation="4dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center_horizontal"
-        android:clipToPadding="false"
-        android:layout_below="@id/headerLogo"
-        android:layout_centerHorizontal="true">
-
-        <!-- Título -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bem vindo(a)."
-            android:textSize="18sp"
-            android:textColor="#000000"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center" />
-
-        <!-- Campo email -->
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email ou telefone"
-            android:backgroundTint="#B0C4DE"
-            android:padding="12dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_edittext" />
-
-        <!-- Campo senha -->
-        <EditText
-            android:id="@+id/etSenha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Senha"
-            android:inputType="textPassword"
-            android:backgroundTint="#B0C4DE"
-            android:padding="12dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/rounded_edittext"/>
-
-        <!-- Esqueceu senha -->
-        <TextView
-            android:id="@+id/tvEsqueceuSenha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Esqueceu sua senha?"
-            android:textSize="12sp"
-            android:textColor="#000000"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="start" />
-
-        <!-- Botão entrar -->
+        <!-- Botão de voltar -->
         <Button
-            android:id="@+id/btnEntrar"
+            android:id="@+id/btnVoltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voltar"
+            android:backgroundTint="#2A2A2A"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp" />
+
+        <!-- Logo + texto acima da caixa branca -->
+        <LinearLayout
+            android:id="@+id/headerLogo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Entrar"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#004AF7"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/rounded_button" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="64dp">
 
-</RelativeLayout>
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/logo_unipump_nobk"
+                android:contentDescription="logo"
+                app:tint="#FFFFFF"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UniPump"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <!-- Caixa branca central com campos -->
+        <LinearLayout
+            android:id="@+id/containerLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@drawable/container_components"
+            android:elevation="4dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_horizontal"
+            android:clipToPadding="false"
+            android:layout_below="@id/headerLogo"
+            android:layout_centerHorizontal="true">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bem vindo(a)."
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center" />
+
+            <!-- Campo email -->
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_telefone"
+                android:drawableRight="@drawable/ic_email"
+                android:backgroundTint="#B0C4DE"
+                android:padding="12dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:maxLength="25"
+                android:inputType="textEmailAddress"
+                />
+
+            <!-- Campo senha -->
+            <EditText
+                android:id="@+id/etSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/senha"
+                android:drawableRight="@drawable/ic_eye"
+                android:inputType="textPassword"
+                android:backgroundTint="#B0C4DE"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_edittext"
+                android:maxLength="25"
+                />
+
+            <!-- Esqueceu senha -->
+            <TextView
+                android:id="@+id/tvEsqueceuSenha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Esqueceu sua senha?"
+                android:textSize="12sp"
+                android:textColor="#0000FF"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="start"
+                />
+
+
+            <!-- Botão entrar -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEntrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entrar"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#004AF7"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:background="@drawable/rounded_button" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

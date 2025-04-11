@@ -13,13 +13,19 @@
         android:theme="@style/Theme.UniPump"
         tools:targetApi="31">
         <activity
+            android:name=".TelaFuncionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaAluno"
+            android:exported="false" />
+        <activity
             android:name=".TelaEsqueceuSenha"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginAluno"
+            android:name=".TelaLogin"
             android:exported="false" />
         <activity
             android:name=".TelaInicial"

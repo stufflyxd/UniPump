@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 class TelaInicial : AppCompatActivity() {
 
     private lateinit var btnAluno: Button
+    private lateinit var btnFuncionario: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +18,7 @@ class TelaInicial : AppCompatActivity() {
 
         // Inicializa os componentes da UI
         btnAluno = findViewById(R.id.btnAluno)
+        btnFuncionario = findViewById(R.id.btnFuncionario)
 
         // Configura os eventos
         configurarEventos()
@@ -49,7 +51,12 @@ class TelaInicial : AppCompatActivity() {
 
     private fun configurarEventos() {
         btnAluno.setOnClickListener {
-            val intent = Intent(this, LoginAluno::class.java)
+            val intent = Intent(this, TelaLogin::class.java)
+            startActivity(intent)
+        }
+        btnFuncionario.setOnClickListener {
+            val intent = Intent(this, TelaLogin::class.java)
+            intent.putExtra("tipo", "funcionario")
             startActivity(intent)
         }
     }

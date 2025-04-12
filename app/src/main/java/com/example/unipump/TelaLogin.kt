@@ -2,10 +2,10 @@ package com.example.unipump
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 
@@ -17,9 +17,11 @@ class TelaLogin : AppCompatActivity() {
     private lateinit var edtSenha: EditText
     private lateinit var btnEntrar: AppCompatButton
 
+    // Variável simulando a senha salva
+    private var senhaSalva: String = "12345" // Senha inicial
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("CicloDeVida", "TelaLogin - onCreate chamado")
         setContentView(R.layout.activity_tela_login)
 
         // Inicializa os componentes da UI
@@ -32,14 +34,10 @@ class TelaLogin : AppCompatActivity() {
         // Configura os eventos
         configurarEventos()
 
-        // Ajustar o título de acordo com o tipo de usuário
-        val tipo = intent.getStringExtra("tipo")
-        if (tipo == "aluno") {
-            // Caso seja aluno, manter o padrão de login com email
-            edtEmail.hint = "Digite seu e-mail"
-        } else if (tipo == "funcionario") {
-            // Caso seja funcionário, mudar o hint para ID
-            edtEmail.hint = "Digite seu ID"
+        // Verifica se há uma nova senha passada pela Intent
+        val novaSenha = intent.getStringExtra("novaSenha")
+        if (novaSenha != null) {
+            senhaSalva = novaSenha // Atualiza a senha salva com a nova senha
         }
     }
 
@@ -65,50 +63,53 @@ class TelaLogin : AppCompatActivity() {
         val usuario = edtEmail.text.toString()
         val senha = edtSenha.text.toString()
 
-        // Verifica se os campos não estão vazios
-        if (usuario.isNotEmpty() && senha.isNotEmpty()) {
-            // Lógica para autenticação (Exemplo com credenciais fixas)
-            if (usuario == "aluno@exemplo.com" && senha == "12345") {
-                // Redireciona para a tela do aluno
-                val intent = Intent(this, TelaAluno::class.java)
-                startActivity(intent)
-            } else if (usuario == "funcionario123" && senha == "12345") {
-                // Redireciona para a tela do funcionário
-                val intent = Intent(this, TelaFuncionario::class.java)
-                startActivity(intent)
+        val tipo = intent.getStringExtra("tipo")
+
+        if (tipo == "aluno") {
+            // Para alunos: valida se o e-mail ou telefone é válido
+            if (isValidEmail(usuario) || isValidPhone(usuario)) {
+                // Aqui você deve comparar o e-mail com o que está salvo
+                if (usuario == "aluno@exemplo.com" && senha == senhaSalva) {
+                    val intent = Intent(this, TelaAluno::class.java)
+                    startActivity(intent)
+                    finish() // Finaliza a tela de login
+                } else {
+                    Toast.makeText(this, "Usuário ou senha inválidos.", Toast.LENGTH_SHORT).show()
+                }
             } else {
-                // Mensagem de erro (pode ser exibido um Toast ou Log)
-                Log.d("Login", "Usuário ou senha inválidos.")
+                // Caso o e-mail/telefone seja inválido
+                Toast.makeText(this, "E-mail ou telefone inválido.", Toast.LENGTH_SHORT).show()
+            }
+        } else if (tipo == "funcionario") {
+            if (isValidId(usuario)){
+                if (usuario == "2413103" && senha == senhaSalva) {
+                    // Verifique se o ID e a senha do funcionário estão corretos
+                    val intent = Intent(this, TelaFuncionario::class.java)
+                    startActivity(intent)
+                    finish() // Finaliza a tela de login
+                } else {
+                    Toast.makeText(this, "ID ou senha inválidos.", Toast.LENGTH_SHORT).show()
+                }
             }
         } else {
-            // Mensagem de erro caso os campos estejam vazios
-            Log.d("Login", "Por favor, preencha todos os campos.")
+            Toast.makeText(this, "Tipo de usuário desconhecido.", Toast.LENGTH_SHORT).show()
         }
     }
 
-    // Ciclo de vida da Activity
-    override fun onStart() {
-        super.onStart()
-        Log.d("CicloDeVida", "TelaLogin - onStart chamado")
+    private fun isValidEmail(email: String): Boolean {
+        // Regex para validar e-mails simples
+        val emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+        return email.matches(emailPattern.toRegex())
     }
 
-    override fun onResume() {
-        super.onResume()
-        Log.d("CicloDeVida", "TelaLogin - onResume chamado")
+    private fun isValidId(id: String): Boolean {
+        val idPattern = "^[0-9]+$"  // Regex para validar apenas números
+        return id.matches(idPattern.toRegex())
     }
 
-    override fun onPause() {
-        super.onPause()
-        Log.d("CicloDeVida", "TelaLogin - onPause chamado")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("CicloDeVida", "TelaLogin - onStop chamado")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("CicloDeVida", "TelaLogin - onDestroy chamado")
+    private fun isValidPhone(phone: String): Boolean {
+        // Regex para validar números de telefone (aqui estou considerando números com 10 ou 11 dígitos)
+        val phonePattern = "^\\+?[0-9]{10,13}$"
+        return phone.matches(phonePattern.toRegex())
     }
 }

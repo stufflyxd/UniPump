@@ -52,6 +52,7 @@ class TelaInicial : AppCompatActivity() {
     private fun configurarEventos() {
         btnAluno.setOnClickListener {
             val intent = Intent(this, TelaLogin::class.java)
+            intent.putExtra("tipo", "aluno")
             startActivity(intent)
         }
         btnFuncionario.setOnClickListener {

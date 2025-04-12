@@ -4,4 +4,25 @@
     <string name="senha">Senha</string>
     <string name="entrar">Entar</string>
     <string name="voltar">Voltar</string>
+    <string name="app_name_descrição">Logo UniPump</string>
+    <string name="passo1">Passo 1 de 4</string>
+    <string name="passo2">Passo 2 de 4</string>
+    <string name="passo3">Passo 3 de 4</string>
+    <string name="passo4">Passo 4 de 4</string>
+    <string name="titulo_passo_1">Digite seu e-mail ou número de telefone para a recuperação.</string>
+    <string name="titulo_passo_2">Antes de enviarmos o código, seuemail@gmail.com é o E-mail correto?</string>
+    <string name="titulo_passo_3">Insira no campo abaixo o código de verificação de 5 digitos enviado para o seu email. </string>
+    <string name="titulo_passo_4">Digite sua nova senha e </string>
+    <string name="redfinir_senha">Redefina sua senha</string>
+    <string name="enviamos_codigo">Acabamos de enviar o codigo para seu email</string>
+    <string name="enviar">Enviar</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="editar">Editar</string>
+    <string name="validar">Validar</string>
+    <string name="reenviar_codigo">Reenviar Condigo</string>
+    <string name="criar_nova_senha">Criar uma nova senha</string>
+    <string name="nova_senha">Nova senha</string>
+    <string name="confirmar_senha">Confirmar senha</string>
+
+
 </resources>

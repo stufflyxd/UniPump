@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
@@ -9,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#004DFF"
+        android:background="@color/azul"
         android:padding="24dp">
 
         <!-- Botão de voltar -->
@@ -38,7 +39,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/logo_unipump_nobk"
-                android:contentDescription="logo"
+                android:contentDescription="@string/app_name_descrição"
                 app:tint="#FFFFFF"
                 android:layout_gravity="center" />
 
@@ -92,7 +93,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@drawable/rounded_edittext"
                 android:maxLength="25"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 />
 
             <!-- Campo senha -->

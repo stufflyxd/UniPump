@@ -13,6 +13,15 @@
         android:theme="@style/Theme.UniPump"
         tools:targetApi="31">
         <activity
+            android:name=".TelaEsqueceuSenha4"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEsqueceuSenha3"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEsqueceuSenha2"
+            android:exported="false" />
+        <activity
             android:name=".TelaFuncionario"
             android:exported="false" />
         <activity
@@ -20,9 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".TelaEsqueceuSenha"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".TelaLogin"

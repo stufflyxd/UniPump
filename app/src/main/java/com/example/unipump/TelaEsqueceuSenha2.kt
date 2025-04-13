@@ -45,7 +45,7 @@ class TelaEsqueceuSenha2 : AppCompatActivity() {
         }
 
         btnConfirmar.setOnClickListener {
-            val intent = Intent(this, TelaEsqueceuSenha::class.java)
+            val intent = Intent(this, TelaEsqueceuSenha3::class.java)
             val tipo = intent.getStringExtra("tipo")
             intent.putExtra("tipo", tipo)
             intent.putExtra("codigoEnviado", "12345")

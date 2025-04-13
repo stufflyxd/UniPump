@@ -2,8 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="azul">#004AF7</color>
+    <color name="blue">#004AF7</color>
     <color name="cinza">#30313580</color>
-    <color name="azul_zço_claro">#B0C4DE</color>
+    <color name="gray_line">#565555</color>
+    <color name="azul_claro">#B0C4DE</color>
+    <color name="dark_gray">#1C1C1C</color>
+    <color name="azul_link">#0EBFFF</color>
 
 </resources>

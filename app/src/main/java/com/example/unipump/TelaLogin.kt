@@ -70,7 +70,7 @@ class TelaLogin : AppCompatActivity() {
             if (isValidEmail(usuario) || isValidPhone(usuario)) {
                 // Aqui você deve comparar o e-mail com o que está salvo
                 if (usuario == "aluno@exemplo.com" && senha == senhaSalva) {
-                    val intent = Intent(this, TelaAluno::class.java)
+                    val intent = Intent(this, TelaPrincipalAluno::class.java)
                     startActivity(intent)
                     finish() // Finaliza a tela de login
                 } else {

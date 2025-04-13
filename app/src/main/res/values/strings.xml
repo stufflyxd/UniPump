@@ -10,7 +10,7 @@
     <string name="passo3">Passo 3 de 4</string>
     <string name="passo4">Passo 4 de 4</string>
     <string name="titulo_passo_1">Digite seu e-mail ou número de telefone para a recuperação.</string>
-    <string name="titulo_passo_2">Antes de enviarmos o código, seuemail@gmail.com é o E-mail correto?</string>
+    <string name="titulo_passo_2">Antes de enviarmos o código, seu email@gmail.com é o E-mail correto?</string>
     <string name="titulo_passo_3">Insira no campo abaixo o código de verificação de 5 digitos enviado para o seu email. </string>
     <string name="titulo_passo_4">Digite sua nova senha e </string>
     <string name="redfinir_senha">Redefina sua senha</string>

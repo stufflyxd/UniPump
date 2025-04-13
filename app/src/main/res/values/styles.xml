@@ -79,7 +79,7 @@
         <item name="android:padding">12dp</item>
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:background">@drawable/rounded_edittext</item>
-        <item name="android:backgroundTint">@color/azul_zço_claro</item>
+        <item name="android:backgroundTint">@color/azul_claro</item>
         <item name="android:maxLength">25</item>
         <item name="android:autofillHints">""</item>
         <item name="android:inputType">text</item>

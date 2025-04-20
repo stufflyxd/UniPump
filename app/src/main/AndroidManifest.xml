@@ -13,6 +13,12 @@
         android:theme="@style/Theme.UniPump"
         tools:targetApi="31">
         <activity
+            android:name=".TelaInformacoesPessoaisAluno"
+            android:exported="false" />
+        <activity
+            android:name=".TelaTreinoAluno"
+            android:exported="false" />
+        <activity
             android:name=".TelaPrincipalAluno"
             android:exported="false" />
         <activity
@@ -26,9 +32,6 @@
             android:exported="false" />
         <activity
             android:name=".TelaFuncionario"
-            android:exported="false" />
-        <activity
-            android:name=".TelaAluno"
             android:exported="false" />
         <activity
             android:name=".TelaEsqueceuSenha"

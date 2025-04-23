@@ -23,6 +23,16 @@
     <string name="criar_nova_senha">Criar uma nova senha</string>
     <string name="nova_senha">Nova senha</string>
     <string name="confirmar_senha">Confirmar senha</string>
+    <string name="informar_peso">Informar peso</string>
+    <string name="peso">Peso</string>
+    <string name="altura">Altura</string>
+    <string name="mais_detalhes">Mais detalhes</string>
+    <string name="dados_do_aluno">Dados do Aluno</string>
+    <string name="sobre_o_aluno">Sobre o Aluno</string>
+    <string name="perfil_usuario">Perfil Usuario</string>
+    <string name="seta_voltar">Seta Voltar</string>
+    <string name="informar_altura">Informar Altura</string>
+    <string name="modificar">Modificar</string>
 
 
 </resources>

@@ -13,6 +13,24 @@
         android:theme="@style/Theme.UniPump"
         tools:targetApi="31">
         <activity
+            android:name=".TelaEdicaoFichaTreino_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaNotificacao_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaConfiguracao_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaChat_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaInformacaoPessoal_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".GerenciamentoDoAluno_Funcionario"
+            android:exported="false" />
+        <activity
             android:name=".TelaPrincipalAluno"
             android:exported="false" />
         <activity

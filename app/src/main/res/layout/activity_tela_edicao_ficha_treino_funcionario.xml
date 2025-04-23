@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaEdicaoFichaTreino_funcionario"
+    android:background="@color/black">
+
+    <!-- LinearLayout para cabeçalho -->
+    <LinearLayout
+        android:id="@+id/FichaTreino"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/SetaVoltarTelaEdicaoFicha"
+            android:layout_width="48sp"
+            android:layout_height="48sp"
+            android:contentDescription="@string/seta_voltar"
+            android:src="@drawable/ic_arrow_back"
+            android:backgroundTint="@color/black"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sobre_o_aluno"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/circular_background"
+            android:backgroundTint="@color/blue"
+            android:contentDescription="@string/perfil_usuario"
+            android:src="@drawable/ic_person"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+    <!-- Container para dados do aluno -->
+    <LinearLayout
+        android:id="@+id/Ficha1"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/conteiner_funcionario"
+        app:layout_constraintTop_toBottomOf="@+id/FichaTreino"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

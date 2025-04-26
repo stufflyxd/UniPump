@@ -124,6 +124,7 @@
 
         <!-- Persona 2 -->
         <LinearLayout
+            android:id="@+id/usuario2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -153,6 +154,7 @@
 
         <!-- Persona 3 -->
         <LinearLayout
+            android:id="@+id/usuario3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -182,6 +184,7 @@
 
         <!-- Persona 4 -->
         <LinearLayout
+            android:id="@+id/usuario4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -211,6 +214,7 @@
 
         <!-- Persona 5 -->
         <LinearLayout
+            android:id="@+id/usuario5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -241,6 +245,7 @@
 
         <!-- Persona 6 -->
         <LinearLayout
+            android:id="@+id/usuario6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -271,6 +276,7 @@
 
         <!-- Persona 7 -->
         <LinearLayout
+            android:id="@+id/usuario7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -301,6 +307,7 @@
 
         <!-- Persona 8 -->
         <LinearLayout
+            android:id="@+id/usuario8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -331,6 +338,7 @@
 
         <!-- Persona 9 -->
         <LinearLayout
+            android:id="@+id/usuario9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -361,6 +369,7 @@
 
         <!-- Persona 10 -->
         <LinearLayout
+            android:id="@+id/usuario10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -391,6 +400,7 @@
 
         <!-- Persona 11 -->
         <LinearLayout
+            android:id="@+id/usuario11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -421,6 +431,7 @@
 
         <!-- Persona 12 -->
         <LinearLayout
+            android:id="@+id/usuario12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

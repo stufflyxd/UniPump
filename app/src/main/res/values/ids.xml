@@ -2,4 +2,5 @@
 <resources>
     <item name="linkModificar" type="id">linkModificar</item>
     <item name="linkModificar" type="id">linkModificar</item>
+    <item name="usuario5" type="id">usuario5</item>
 </resources>

@@ -30,8 +30,21 @@ class TelaPrincipalAluno : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
+                R.id.nav_config -> {
+                    val intent = Intent(this, TelaConfig::class.java)
+                    startActivity(intent)
+                    true
 
-                else -> false
+                }
+
+                R.id.nav_chat -> {
+                    //
+                    true
+                }
+
+                else -> {
+                    false
+                }
             }
         }
     }

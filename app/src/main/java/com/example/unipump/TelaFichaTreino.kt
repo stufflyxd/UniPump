@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class TelaConfig : AppCompatActivity() {
+class TelaFichaTreino : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_tela_config)
+        setContentView(R.layout.activity_tela_ficha_treino)
 
     }
 }

@@ -28,7 +28,6 @@ class TelaTreinoAluno : AppCompatActivity() {
                     // Ir para a tela de treinos
                     true
                 }
-
                 else -> false
             }
         }

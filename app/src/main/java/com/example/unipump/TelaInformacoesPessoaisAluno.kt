@@ -22,14 +22,12 @@ class TelaInformacoesPessoaisAluno : AppCompatActivity() {
 
     }
 
-
-
     override fun onStart() {
 
         // Voltar
         btn_voltar.setOnClickListener{
-            val itent = Intent(this, TelaInformacoesPessoaisAluno:: class.java)
-            // startActivity() Tela de configurações
+            val itent = Intent(this, TelaConfig:: class.java)
+            startActivity(itent) //Tela de configurações
         }
 
 

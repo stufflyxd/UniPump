@@ -12,16 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniPump"
         tools:targetApi="31">
-
+        <activity
+            android:name=".TelaFichaTreino"
+            android:exported="false" />
         <!-- Versão atualizada do seu arquivo de atividades -->
         <activity
             android:name=".TelaInformacoesPessoaisAluno"
             android:exported="false" />
         <activity
             android:name=".TelaTreinoAluno"
-            android:exported="false" />
-
-        <!-- Atividades da branch 'confia' -->
+            android:exported="false" /> <!-- Atividades da branch 'confia' -->
         <activity
             android:name=".TelaEdicaoFichaTreino_funcionario"
             android:exported="false" />
@@ -39,9 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".GerenciamentoDoAluno_Funcionario"
-            android:exported="false" />
-
-        <!-- Outras atividades existentes -->
+            android:exported="false" /> <!-- Outras atividades existentes -->
         <activity
             android:name=".TelaPrincipalAluno"
             android:exported="false" />
@@ -68,6 +66,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -35,8 +35,8 @@
 
                 <ImageButton
                     android:id="@+id/SetaVoltarTelaGerenciamentoAluno"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
                     android:contentDescription="@string/seta_voltar"
                     android:src="@drawable/ic_arrow_back"
                     android:backgroundTint="@color/black"/>
@@ -133,7 +133,6 @@
                         android:importantForAccessibility="yes"
                         android:contentDescription="@string/informar_altura"
                         android:inputType="text"
-                        android:text="1,80 m"
                         android:paddingStart="20dp"
                         android:textColor="@color/white"
                         android:maxLength="20"
@@ -159,7 +158,6 @@
                         android:contentDescription="@string/informar_peso"
                         android:autofillHints="name"
                         android:inputType="text"
-                        android:text="80 Kg"
                         android:paddingStart="20dp"
                         android:textColor="@color/white"
                         android:maxLength="20"/>
@@ -199,7 +197,7 @@
                         android:id="@+id/link_modificar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/modificar"
+                        android:text="Criar +"
                         android:textColor="@color/azul_link"/>
                 </LinearLayout>
 
@@ -216,100 +214,30 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp">
+                    android:layout_marginBottom="20dp"
+                    >
 
-                    <!-- Opção A -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:orientation="horizontal"
-                        android:gravity="start|center_vertical"
-                        android:background="@drawable/rounded_edittext"
-                        android:backgroundTint="@color/black"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="20dp"
-                        >
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="A"
-                            android:textColor="@color/azul_link"
-                            android:textSize="18sp"
-                            android:paddingStart="20dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Costas e bíceps"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:layout_marginStart="10dp"/>
-                    </LinearLayout>
-
-                    <!-- Opção B -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:orientation="horizontal"
-                        android:gravity="start|center_vertical"
-                        android:background="@drawable/rounded_button"
-                        android:backgroundTint="@color/black"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="20dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="B"
-                            android:textColor="@color/azul_link"
-                            android:textSize="18sp"
-                            android:paddingStart="20dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Peito e tríceps"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:layout_marginStart="10dp"/>
-                    </LinearLayout>
-
-                    <!-- Opção C -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:orientation="horizontal"
-                        android:gravity="start|center_vertical"
-                        android:background="@drawable/rounded_button"
-                        android:backgroundTint="@color/black"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="20dp"
-                        >
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="C"
-                            android:textColor="@color/azul_link"
-                            android:textSize="18sp"
-                            android:paddingStart="20dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Inferiores completo"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:layout_marginStart="10dp"/>
-                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#202020"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_nav_funcionario" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

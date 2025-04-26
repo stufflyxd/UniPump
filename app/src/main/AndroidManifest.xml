@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniPump"
         tools:targetApi="31">
+
         <activity
             android:name=".TelaFichaTreino"
-
             android:name=".TelaGerenciamentoAlunoNovo_Funcionario"
             android:exported="false" />
         <!-- Versão atualizada do seu arquivo de atividades -->

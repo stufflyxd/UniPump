@@ -56,8 +56,7 @@ class TelaPrincipalAluno : AppCompatActivity() {
             }
         }
     }
-
-
+    
     private fun onClickVisualizar(){
         visualizar.setOnClickListener {
             val intent = Intent(this, TelaFichaTreino:: class.java)

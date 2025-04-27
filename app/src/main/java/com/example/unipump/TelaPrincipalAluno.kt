@@ -3,11 +3,13 @@ package com.example.unipump
 import android.content.ClipData.Item
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaPrincipalAluno : AppCompatActivity() {
 
+    private lateinit var visualizar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +18,11 @@ class TelaPrincipalAluno : AppCompatActivity() {
         // 1. Acessar o BottomNavigationView
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
+
+        // 2. Visualizar
+
+        visualizar = findViewById(R.id.btn_visualizar)
+        onClickVisualizar()
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -46,6 +53,15 @@ class TelaPrincipalAluno : AppCompatActivity() {
                     false
                 }
             }
+        }
+    }
+
+
+
+    private fun onClickVisualizar(){
+        visualizar.setOnClickListener {
+            val intent = Intent(this, TelaFichaTreino:: class.java)
+            startActivity(intent)
         }
     }
 }

@@ -10,7 +10,6 @@ import androidx.core.view.WindowInsetsCompat
 
 class TelaExercicioFinalizado : AppCompatActivity() {
     private lateinit var finalizar: Button
-    private lateinit var visualizar: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

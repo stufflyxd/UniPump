@@ -145,7 +145,7 @@ class TelaFuncionario : AppCompatActivity() {
 
                 R.id.nav_config -> {
                     // Abre a tela de configurações
-                    val intent = Intent(this, TelaConfiguracao_funcionario::class.java)
+                    val intent = Intent(this, TelaConfig::class.java)
                     startActivity(intent)
                     true
                 }

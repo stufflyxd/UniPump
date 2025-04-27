@@ -1,4 +1,20 @@
 package com.example.unipump
 
-class TelaSobre {
+import android.os.Bundle
+import android.widget.ImageView
+import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
+
+class TelaSobre : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_tela_sobre)
+
+        val backButton: ImageView = findViewById(R.id.back_button)
+
+        backButton.setOnClickListener {
+            finish()
+        }
+    }
 }

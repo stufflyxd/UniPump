@@ -99,6 +99,18 @@
         <item name="android:layout_marginHorizontal">60dp</item>
     </style>
 
+    <!-- res/values/styles.xml -->
+    <style name="CalendarDateText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CalendarWeekDayText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
 
 
 

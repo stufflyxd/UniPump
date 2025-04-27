@@ -15,8 +15,12 @@
 
         <activity
             android:name=".TelaFichaTreino"
+            android:exported="false" />
+
+        <activity
             android:name=".TelaGerenciamentoAlunoNovo_Funcionario"
             android:exported="false" />
+
         <!-- Versão atualizada do seu arquivo de atividades -->
         <activity
             android:name=".TelaInformacoesPessoaisAluno"

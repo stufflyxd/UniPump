@@ -17,5 +17,6 @@
     <color name="azul_arroxeado">#D7DBFF</color>
     <color name="azul_claro_2">#98c9f4</color>
     <color name="branco_fantasma">#f8f8ff</color>
+    <color name="field_background">#202020</color>
 
 </resources>

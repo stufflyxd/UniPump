@@ -36,7 +36,7 @@
             android:layout_weight="1"
             android:textColor="@color/white"
             android:textSize="23sp" />
-        
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                 android:text="A"
                 android:textColor="@color/blue"
                 android:textSize="50sp"
-                android:textStyle="bold" />  
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/nomeFicha"
                 android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
                 />
         </LinearLayout>
 
-        
+
     </LinearLayout>
 
 
@@ -75,11 +75,11 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:paddingBottom="10dp"
+
         android:background="@drawable/conteiner_funcionario"
         android:orientation="vertical"
         >
-        
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             />
-        
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -140,7 +140,9 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#202020"
                 android:contentDescription="Botão de adicionar exercicio"
-                android:src="@drawable/plus_circle" />
+                android:src="@drawable/plus_circle"
+                />
+
         </LinearLayout>
 
         <!-- Linha separadora -->
@@ -235,7 +237,7 @@
             />
 
 
-        
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

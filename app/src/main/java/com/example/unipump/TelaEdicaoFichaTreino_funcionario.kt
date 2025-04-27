@@ -29,7 +29,7 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
     lateinit var buttonExcluirSerie6: ImageButton
     lateinit var buttonExcluirSerie7: ImageButton
     lateinit var buttonExcluirSerie8: ImageButton
-    
+
     lateinit var exercio1: LinearLayout
     lateinit var exercio2: LinearLayout
     lateinit var exercio3: LinearLayout
@@ -42,8 +42,8 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
     lateinit var serie6: LinearLayout
     lateinit var serie7: LinearLayout
     lateinit var serie8: LinearLayout
-            
-            
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -67,7 +67,7 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
         buttonExcluirSerie7 = findViewById(R.id.buttonExcluirSerie7)
         buttonExcluirSerie8 = findViewById(R.id.buttonExcluirSerie8)
 
-        
+
         exercio1 = findViewById(R.id.exercio1)
         exercio2 = findViewById(R.id.exercio2)
         exercio3 = findViewById(R.id.exercio3)
@@ -80,7 +80,7 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
         serie6 = findViewById(R.id.serie6)
         serie7 = findViewById(R.id.serie7)
         serie8 = findViewById(R.id.serie8)
-        
+
         configurarEventos()
     }
 

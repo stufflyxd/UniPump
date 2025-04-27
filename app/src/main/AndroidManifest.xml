@@ -13,9 +13,14 @@
         android:theme="@style/Theme.UniPump"
         tools:targetApi="31">
         <activity
-            android:name=".TelaGerenciamentoAlunoNovo_Funcionario"
+            android:name=".TelaCriarFichaTreino2_Funcionario"
             android:exported="false" />
-        <!-- Versão atualizada do seu arquivo de atividades -->
+        <activity
+            android:name=".TelaCriarFichaTreino_Funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaGerenciamentoAlunoNovo_Funcionario"
+            android:exported="false" /> <!-- Versão atualizada do seu arquivo de atividades -->
         <activity
             android:name=".TelaInformacoesPessoaisAluno"
             android:exported="false" />

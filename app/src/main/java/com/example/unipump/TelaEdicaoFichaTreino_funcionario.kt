@@ -51,8 +51,8 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
 
         btnSetaVoltar = findViewById(R.id.SetaVoltarTelaEdicaoFicha)
 
-        btnAddExercio1 = findViewById(R.id.btnAddExercio1)
-        btnAddExercio2 = findViewById(R.id.btnAddExercio2)
+        btnAddExercio1 = findViewById(R.id.btnAddExercico1)
+        btnAddExercio2 = findViewById(R.id.btnAddExercico2)
 
         btnLixeiraExercio1 = findViewById(R.id.btnLixeiraExercio1)
         btnLixeiraExercio2 = findViewById(R.id.btnLixeiraExercio2)

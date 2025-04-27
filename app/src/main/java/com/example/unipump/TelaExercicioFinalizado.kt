@@ -8,26 +8,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class TelaFichaTreino : AppCompatActivity() {
+class TelaExercicioFinalizado : AppCompatActivity() {
+    private lateinit var finalizar: Button
+    private lateinit var visualizar: Button
 
-    private lateinit var bntComecar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_tela_exercicio_finalizado)
 
-        setContentView(R.layout.activity_tela_ficha_treino)
+        finalizar = findViewById(R.id.btnFinalizar)
 
-        bntComecar = findViewById(R.id.buttonStart)
-
-        onClickStart()
+        onClickFinalizar()
     }
 
-    private fun onClickStart(){
-        bntComecar.setOnClickListener {
-            val intent = Intent(this, TelaExercicio1:: class.java)
+    private fun onClickFinalizar(){
+
+        finalizar.setOnClickListener {
+            val intent = Intent(this, TelaTreinoAluno:: class.java)
             startActivity(intent)
         }
+
     }
-
-
 }

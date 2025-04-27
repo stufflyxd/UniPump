@@ -100,6 +100,7 @@
                 android:layout_margin="16dp"
                 android:backgroundTint="@color/blue"
                 android:textColor="@color/white" />
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -369,14 +370,17 @@
     <!-- Botão de acessibilidade -->
     <ImageButton
         android:id="@+id/btn_acessibilidade"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@color/black"
         android:src="@drawable/ic_accessibility"
-        android:background="@drawable/rounded_button"
-        android:layout_margin="16dp"
+        android:scaleType="centerInside"
+        android:padding="12dp"
         android:contentDescription="Acessibilidade"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

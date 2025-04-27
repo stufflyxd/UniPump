@@ -12,24 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniPump"
         tools:targetApi="31">
-
+        <activity
+            android:name=".TelaExercicioFinalizado"
+            android:exported="false" />
+        <activity
+            android:name=".TelaExercicio2"
+            android:exported="false" />
+        <activity
+            android:name=".TelaExercicio1"
+            android:exported="false" />
         <activity
             android:name=".TelaFichaTreino"
             android:exported="false" />
-
         <activity
             android:name=".TelaCriarFichaTreino2_Funcionario"
-            android:exported="false" />
-
-        <!-- Versão atualizada do seu arquivo de atividades -->
-
+            android:exported="false" /> <!-- Versão atualizada do seu arquivo de atividades -->
         <activity
             android:name=".TelaCriarFichaTreino_Funcionario"
             android:exported="false" />
         <activity
             android:name=".TelaGerenciamentoAlunoNovo_Funcionario"
             android:exported="false" /> <!-- Versão atualizada do seu arquivo de atividades -->
-
         <activity
             android:name=".TelaInformacoesPessoaisAluno"
             android:exported="false" />

@@ -87,6 +87,7 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
 
     fun configurarEventos() {
 
+<<<<<<< HEAD
         btnNavegacao.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_inicio -> {
@@ -113,6 +114,8 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
         }
 
 
+=======
+>>>>>>> 5fc55a8acb708dff32a20f42857ae79a05a244ca
         val tipoFicha = intent.getStringExtra("ficha")
         val nomeFicha = intent.getStringExtra("nomeFicha")
 
@@ -133,9 +136,12 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
 
 
             val intent = Intent(this, TelaCriarFichaTreino2_Funcionario::class.java)
+<<<<<<< HEAD
 
             intent.putExtra("nomeExercicio", nomeExercicio)  // Passa o nome do exercício para a próxima tela
 
+=======
+>>>>>>> 5fc55a8acb708dff32a20f42857ae79a05a244ca
             if (tipoFicha == "A") {
                 intent.putExtra("ficha" , "A")
                 intent.putExtra("nomeFicha", "Costas e Bíceps")
@@ -158,9 +164,12 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
 
 
             val intent = Intent(this, TelaCriarFichaTreino2_Funcionario::class.java)
+<<<<<<< HEAD
 
             intent.putExtra("nomeExercicio", nomeExercicio)  // Passa o nome do exercício para a próxima tela
 
+=======
+>>>>>>> 5fc55a8acb708dff32a20f42857ae79a05a244ca
             if (tipoFicha == "A") {
                 intent.putExtra("ficha" , "A")
                 intent.putExtra("nomeFicha", "Costas e Bíceps")
@@ -185,9 +194,12 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
 
 
             val intent = Intent(this, TelaCriarFichaTreino2_Funcionario::class.java)
+<<<<<<< HEAD
 
             intent.putExtra("nomeExercicio", nomeExercicio)  // Passa o nome do exercício para a próxima tela
 
+=======
+>>>>>>> 5fc55a8acb708dff32a20f42857ae79a05a244ca
             if (tipoFicha == "A") {
                 intent.putExtra("ficha" , "A")
                 intent.putExtra("nomeFicha", "Costas e Bíceps")

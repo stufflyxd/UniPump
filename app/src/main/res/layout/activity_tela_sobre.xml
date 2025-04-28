@@ -18,13 +18,12 @@
             <!-- botao voltar -->
 
             <ImageButton
-                android:id="@+id/back_button"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="Voltar"
-                android:src="?attr/homeAsUpIndicator"
-                android:background="@color/black"
-                app:tint="@android:color/white" />
+                android:id="@+id/SetaVoltarTelaCriarFicha"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                android:contentDescription="@string/seta_voltar"
+                android:src="@drawable/ic_arrow_back"
+                android:backgroundTint="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"

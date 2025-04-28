@@ -24,7 +24,7 @@ class TelaFichaTreino : AppCompatActivity() {
 
     private fun onClickStart(){
         bntComecar.setOnClickListener {
-            val intent = Intent(this, TelaExercicio1:: class.java)
+            val intent = Intent(this, TelaExercicioFinalizado:: class.java)
             startActivity(intent)
         }
     }

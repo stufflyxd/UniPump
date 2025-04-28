@@ -1,6 +1,5 @@
 package com.example.unipump
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View.generateViewId
 import android.view.ViewGroup
@@ -11,7 +10,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+<<<<<<< HEAD
 import com.google.android.material.bottomnavigation.BottomNavigationView
+=======
+>>>>>>> 5fc55a8acb708dff32a20f42857ae79a05a244ca
 
 class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
 
@@ -66,11 +68,16 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
 
         val tipoFicha = intent.getStringExtra("ficha")
         val nomeFicha = intent.getStringExtra("nomeFicha")
+<<<<<<< HEAD
         val nomeExercicio = intent.getStringExtra("nomeExercicio") // Recuperando o nome do exercício
 
 
         // Verificando o tipo de ficha e alterando os TextViews
 
+=======
+        // Verificando o tipo de ficha e alterando os TextViews
+
+>>>>>>> 5fc55a8acb708dff32a20f42857ae79a05a244ca
         if (tipoFicha == "A") {
             textLetraFicha.text = "A"  // Atualiza o TextView letraFicha com "A"
         } else if (tipoFicha == "B") {
@@ -84,9 +91,13 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
 
         // Atualiza o TextView nomeFicha com o nome recebido da Intent
         textNomeFicha.text = nomeFicha
+<<<<<<< HEAD
 
         // Atualiza o TextView nomeExercicio com o nome do exercício recebido da Intent
         textNomeExercicio.text = nomeExercicio
+=======
+        intent.getStringExtra(nomeFicha)
+>>>>>>> 5fc55a8acb708dff32a20f42857ae79a05a244ca
 
     }
 
@@ -289,6 +300,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
                 resources.getDimensionPixelSize(R.dimen.field_height)
             ).apply {
                 marginEnd = resources.getDimensionPixelSize(R.dimen.time_margin)
+
             }
             background = resources.getDrawable(R.drawable.rounded_edittext, null)
             backgroundTintList = resources.getColorStateList(R.color.field_background, null)

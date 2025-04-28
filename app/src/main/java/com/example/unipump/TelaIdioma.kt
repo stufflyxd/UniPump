@@ -3,6 +3,7 @@ package com.example.unipump
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.Toast
@@ -14,7 +15,7 @@ class TelaIdioma : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_idioma)
 
-        val backButton: ImageView = findViewById(R.id.back_button)
+        val backButton: ImageButton = findViewById(R.id.back_button)
         val languageListView: ListView = findViewById(R.id.language_list)
 
         // Opçoes de idioma

@@ -4,20 +4,28 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View.generateViewId
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
 
+    private lateinit var btnNavegacao : BottomNavigationView
+
     lateinit var btnSetaVoltar: ImageButton
+
+    lateinit var btnAdicionarFicha: Button
+
+
     lateinit var textLetraFicha: TextView
     lateinit var textNomeFicha: TextView
+    lateinit var textNomeExercicio: TextView
+
     lateinit var btnAddExercicio: ImageButton
     lateinit var btnExcluirSerie1: ImageButton
     lateinit var btnExcluirSerie2: ImageButton
@@ -25,6 +33,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
     lateinit var serie1: LinearLayout
     lateinit var serie2: LinearLayout
     lateinit var serie3: LinearLayout
+    lateinit var conteinerSerie: LinearLayout
 
     private var serieCount = 3 // Começa com 3 porque já temos 3 séries iniciais
 
@@ -33,9 +42,16 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_tela_criar_ficha_treino2_funcionario)
 
+        btnNavegacao = findViewById(R.id.bottom_navigation)
+
+        btnAdicionarFicha = findViewById(R.id.btnAdicionar)
+
         btnSetaVoltar = findViewById(R.id.SetaVoltarTelaCriarFicha2)
+
         textLetraFicha = findViewById(R.id.letraFicha)
         textNomeFicha = findViewById(R.id.nomeFicha)
+        textNomeExercicio = findViewById(R.id.txtNomeExercicio)
+
         btnAddExercicio = findViewById(R.id.btnAddExercio_telaCriar2)
         btnExcluirSerie1 = findViewById(R.id.btnExcluirSerie1)
         btnExcluirSerie2 = findViewById(R.id.btnExcluirSerie2)
@@ -43,21 +59,113 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
         serie1 = findViewById(R.id.serie1)
         serie2 = findViewById(R.id.serie2)
         serie3 = findViewById(R.id.serie3)
+        conteinerSerie = findViewById(R.id.conteinerSerie)
 
         configurarEventos()
 
+
         val tipoFicha = intent.getStringExtra("ficha")
         val nomeFicha = intent.getStringExtra("nomeFicha")
+        val nomeExercicio = intent.getStringExtra("nomeExercicio") // Recuperando o nome do exercício
 
-        when (tipoFicha) {
-            "A" -> textLetraFicha.text = "A"
-            "B" -> textLetraFicha.text = "B"
+
+        // Verificando o tipo de ficha e alterando os TextViews
+
+        if (tipoFicha == "A") {
+            textLetraFicha.text = "A"  // Atualiza o TextView letraFicha com "A"
+        } else if (tipoFicha == "B") {
+            textLetraFicha.text = "B"  // Atualiza o TextView letraFicha com "A"
         }
 
+        /*when (tipoFicha) {
+            "A" -> textLetraFicha.text = "A" // Se for A, exibe A
+            "B" -> textLetraFicha.text = "B"  // Se for B, exibe B
+        }*/
+
+        // Atualiza o TextView nomeFicha com o nome recebido da Intent
         textNomeFicha.text = nomeFicha
+
+        // Atualiza o TextView nomeExercicio com o nome do exercício recebido da Intent
+        textNomeExercicio.text = nomeExercicio
+
     }
 
     fun configurarEventos() {
+
+
+        btnAdicionarFicha.setOnClickListener {
+
+            // Captura o nome do exercício
+            val nomeExercicio = findViewById<TextView>(R.id.txtNomeExercicio).text.toString()
+
+            // Criar listas para armazenar as repetições, pesos, e tempos das séries
+            val repeticoes = mutableListOf<String>()
+            val pesos = mutableListOf<String>()
+            val tempos = mutableListOf<String>()
+
+            // Percorre cada LinearLayout da série dentro do container
+            for (i in 0 until conteinerSerie.childCount) {
+                val serieLayout = conteinerSerie.getChildAt(i) as LinearLayout
+
+                // Pegando os EditTexts diretamente pelas IDs específicas de cada campo
+                val repeticoesEditText = serieLayout.findViewById<EditText>(R.id.editRepeticoes1 + i)
+                val pesoEditText = serieLayout.findViewById<EditText>(R.id.editPeso1 + i)
+                val tempoEditText = serieLayout.findViewById<EditText>(R.id.editTempo1 + i)
+
+                // Adiciona os dados às listas
+                repeticoes.add(repeticoesEditText.text.toString())
+                pesos.add(pesoEditText.text.toString())
+                tempos.add(tempoEditText.text.toString())
+            }
+
+            // Criar a Intent e enviar os dados para a próxima tela
+            val intent = Intent(this, TelaEdicaoFichaTreino_funcionario::class.java).apply {
+                putExtra("nomeExercicio", nomeExercicio)
+                putExtra("repeticoes", repeticoes.toTypedArray()) // Passando as repetições
+                putExtra("pesos", pesos.toTypedArray()) // Passando os pesos
+                putExtra("tempos", tempos.toTypedArray()) // Passando os tempos
+                putExtra("tipoFicha", intent.getStringExtra("ficha")) // Passando o tipo de ficha (A ou B)
+            }
+
+           /* // Enviar também o tipo de ficha, se necessário
+            val tipoFicha = intent.getStringExtra("ficha")
+            if (tipoFicha != null) {
+                intent.putExtra("ficha", tipoFicha)
+            }
+*/
+            // Iniciar a próxima Activity
+            startActivity(intent)
+        }
+
+
+
+        btnNavegacao.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_inicio -> {
+                    // O que acontece quando o item "Início" é clicado (permanece na tela atual)
+                    true
+                }
+
+                R.id.nav_chat -> {
+                    // Abre a tela de chat
+                    val intent = Intent(this, TelaChat_funcionario::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_config -> {
+                    // Abre a tela de configurações
+                    val intent = Intent(this, TelaConfig::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+        }
+
+
+
         btnSetaVoltar.setOnClickListener {
             onBackPressed()
         }
@@ -82,10 +190,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
     fun excluirLinearLayout(linearLayout: LinearLayout) {
         (linearLayout.parent as? ViewGroup)?.removeView(linearLayout)
     }
-
     private fun adicionarNovaSerie() {
-        serieCount++
-
         // Cria um novo LinearLayout com as mesmas propriedades das séries existentes
         val novaSerie = LinearLayout(this).apply {
             layoutParams = LinearLayout.LayoutParams(
@@ -114,7 +219,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
             id = generateViewId()
         }
 
-        // Adiciona o número da série
+        // Adiciona o número da série (pode ser retirado caso não queira usar a contagem)
         TextView(this).apply {
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -122,7 +227,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
             ).apply {
                 marginEnd = resources.getDimensionPixelSize(R.dimen.serie_number_margin)
             }
-            text = serieCount.toString()
+            text = (conteinerSerie.childCount + 1).toString()  // Número da série com base no número de filhos no container
             setTextColor(resources.getColor(R.color.white, null))
             textSize = 28f
             novaSerie.addView(this)
@@ -216,13 +321,12 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
             contentDescription = "Botão de excluir série"
             setOnClickListener {
                 excluirLinearLayout(novaSerie)
-                serieCount--
             }
             novaSerie.addView(this)
         }
 
-        // Adiciona a nova série ao container pai (o LinearLayout que contém todas as séries)
-        val containerPai = findViewById<LinearLayout>(R.id.serie1).parent as ViewGroup
-        containerPai.addView(novaSerie, containerPai.indexOfChild(findViewById(R.id.serie3)) + 1)
+        // Adiciona a nova série diretamente ao container
+        conteinerSerie.addView(novaSerie)
     }
 }
+

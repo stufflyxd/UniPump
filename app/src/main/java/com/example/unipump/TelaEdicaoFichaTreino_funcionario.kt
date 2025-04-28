@@ -1,17 +1,28 @@
 package com.example.unipump
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.InputType
+import android.view.Gravity
 import android.view.View
+import android.view.View.generateViewId
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
 
+    private lateinit var btnNavegacao : BottomNavigationView
+
     lateinit var btnSetaVoltar: ImageButton
+
+    lateinit var btnAdicionarFicha: Button
 
     lateinit var btnAddExercio1: ImageButton
     lateinit var btnAddExercio2: ImageButton
@@ -49,7 +60,11 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_tela_edicao_ficha_treino_funcionario)
 
+        btnNavegacao = findViewById(R.id.bottom_navigation)
+
         btnSetaVoltar = findViewById(R.id.SetaVoltarTelaEdicaoFicha)
+
+        btnAdicionarFicha = findViewById(R.id.btnAdicionar)
 
         btnAddExercio1 = findViewById(R.id.btnAddExercico1)
         btnAddExercio2 = findViewById(R.id.btnAddExercico2)
@@ -85,6 +100,33 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
     }
 
     fun configurarEventos() {
+
+
+
+        btnNavegacao.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_inicio -> {
+                    // O que acontece quando o item "Início" é clicado (permanece na tela atual)
+                    true
+                }
+
+                R.id.nav_chat -> {
+                    // Abre a tela de chat
+                    val intent = Intent(this, TelaChat_funcionario::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_config -> {
+                    // Abre a tela de configurações
+                    val intent = Intent(this, TelaConfig::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+        }
 
         btnAddExercio1.setOnClickListener {
             val intent = Intent(this, TelaCriarFichaTreino_Funcionario::class.java)
@@ -155,6 +197,121 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
             excluirLinearLayout(serie8)
         }
 
+        btnAdicionarFicha.setOnClickListener {
+            adicionarNovaFicha()
+        }
+    }
+
+    fun adicionarNovaFicha() {
+        // Criar o LinearLayout principal (Ficha2)
+        val novaFicha = LinearLayout(this).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                resources.getDimensionPixelSize(R.dimen.largura_ficha), // 345dp
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                gravity = Gravity.CENTER_HORIZONTAL
+                setMargins(
+                    0,
+                    resources.getDimensionPixelSize(R.dimen.margem_superior_ficha), // 24dp
+                    0,
+                    resources.getDimensionPixelSize(R.dimen.margem_inferior_ficha) // 16dp
+                )
+            }
+            orientation = LinearLayout.VERTICAL
+            background = resources.getDrawable(R.drawable.conteiner_funcionario, null)
+            setPadding(0, 0, 0, resources.getDimensionPixelSize(R.dimen.padding_inferior_ficha)) // 20dp
+            id = generateViewId()
+        }
+
+        // Criar o LinearLayout do título
+        val layoutTitulo = LinearLayout(this).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(
+                    resources.getDimensionPixelSize(R.dimen.margem_horizontal_titulo), // 20dp
+                    resources.getDimensionPixelSize(R.dimen.margem_superior_titulo), // 15dp
+                    resources.getDimensionPixelSize(R.dimen.margem_horizontal_titulo), // 20dp
+                    0
+                )
+            }
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER
+        }
+
+        // Criar o EditText da letra (B)
+        val editLetra = EditText(this).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                marginEnd = resources.getDimensionPixelSize(R.dimen.margem_direita_letra) // 8dp
+            }
+            setText("B")
+            setTextColor(resources.getColor(R.color.azul, null))
+            textSize = 45f
+            setTypeface(typeface, Typeface.BOLD)
+            maxLines = 1
+            inputType = InputType.TYPE_CLASS_TEXT
+        }
+
+        // Criar o EditText do nome (Peito e Triceps)
+        val editNome = EditText(this).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1f
+            )
+            backgroundTintList = resources.getColorStateList(R.color.cinza_escuro, null)
+            setText("Peito e Triceps")
+            setTextColor(resources.getColor(R.color.branco, null))
+            textSize = 20f
+        }
+
+        // Criar o botão de adicionar exercício
+        val btnAdicionarExercicio = ImageButton(this).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            backgroundTintList = resources.getColorStateList(R.color.cinza_escuro, null)
+            setImageResource(R.drawable.plus_circle)
+            contentDescription = "Botão de adicionar exercício"
+            id = generateViewId()
+
+            // Configurar clique para abrir tela de criação de exercício
+            setOnClickListener {
+                val intent = Intent(this@TelaEdicaoFichaTreino_funcionario,
+                    TelaCriarFichaTreino_Funcionario::class.java)
+                intent.putExtra("ficha", "B")
+                intent.putExtra("nomeFicha", "Peito e Tríceps")
+                startActivity(intent)
+            }
+        }
+
+        // Criar a linha separadora
+        val linhaSeparadora = View(this).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                resources.getDimensionPixelSize(R.dimen.altura_linha) // 2dp
+            ).apply {
+                setMargins(0, resources.getDimensionPixelSize(R.dimen.margem_superior_linha), 0, 0) // 10dp
+            }
+            setBackgroundColor(resources.getColor(android.R.color.darker_gray, null))
+        }
+
+        // Adicionar views aos seus pais
+        layoutTitulo.addView(editLetra)
+        layoutTitulo.addView(editNome)
+        layoutTitulo.addView(btnAdicionarExercicio)
+
+        novaFicha.addView(layoutTitulo)
+        novaFicha.addView(linhaSeparadora)
+
+        // Adicionar a nova ficha ao container principal
+        val container = findViewById<ViewGroup>(R.id.containerFichas) // Você precisa ter este container no seu layout
+        container.addView(novaFicha)
     }
 
     // Função para excluir o LinearLayout pai

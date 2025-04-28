@@ -19,4 +19,15 @@
     <!-- Dimensões para o botão de excluir -->
     <dimen name="delete_button_size">48dp</dimen>
     <dimen name="delete_button_margin">20dp</dimen>
+
+
+    <dimen name="largura_ficha">345dp</dimen>
+    <dimen name="margem_superior_ficha">24dp</dimen>
+    <dimen name="margem_inferior_ficha">16dp</dimen>
+    <dimen name="padding_inferior_ficha">20dp</dimen>
+    <dimen name="margem_horizontal_titulo">20dp</dimen>
+    <dimen name="margem_superior_titulo">15dp</dimen>
+    <dimen name="margem_direita_letra">8dp</dimen>
+    <dimen name="altura_linha">2dp</dimen>
+    <dimen name="margem_superior_linha">10dp</dimen>
 </resources>

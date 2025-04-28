@@ -19,4 +19,8 @@
     <color name="branco_fantasma">#f8f8ff</color>
     <color name="field_background">#202020</color>
 
+    <color name="azul">#FF0000FF</color> <!-- Substitua pelo seu azul -->
+    <color name="branco">#FFFFFFFF</color>
+    <color name="cinza_escuro">#FF202020</color>
+
 </resources>

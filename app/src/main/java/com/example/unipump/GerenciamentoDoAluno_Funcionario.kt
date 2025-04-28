@@ -10,12 +10,14 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class GerenciamentoDoAluno_Funcionario : AppCompatActivity() {
 
     private lateinit var linkModificar: TextView
     private lateinit var linkMaisDetalhes: TextView
     private lateinit var btnSetaVoltar : ImageButton
+    private lateinit var btnNavegacao : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,8 @@ class GerenciamentoDoAluno_Funcionario : AppCompatActivity() {
         linkMaisDetalhes = findViewById(R.id.link_mais_detalhes)
         linkModificar = findViewById(R.id.link_modificar)
         btnSetaVoltar = findViewById(R.id.SetaVoltarTelaGerenciamentoAluno)
+        btnNavegacao = findViewById(R.id.bottom_navigation)
+
         configurarEventos()
     }
 
@@ -46,6 +50,34 @@ class GerenciamentoDoAluno_Funcionario : AppCompatActivity() {
         btnSetaVoltar.setOnClickListener {
             onBackPressed() // Isso chama o comportamento de voltar para a tela anterior
         }
+
+
+        btnNavegacao.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_inicio -> {
+                    // O que acontece quando o item "Início" é clicado (permanece na tela atual)
+                    true
+                }
+
+                R.id.nav_chat -> {
+                    // Abre a tela de chat
+                    val intent = Intent(this, TelaChat_funcionario::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_config -> {
+                    // Abre a tela de configurações
+                    val intent = Intent(this, TelaConfig::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+        }
+
+
     }
 
 

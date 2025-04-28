@@ -1,5 +1,6 @@
 package com.example.unipump
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -29,22 +30,30 @@ class TelaConfig : AppCompatActivity() {
 
         personalInfo.setOnClickListener {
             // abrir tela de informaões pessoais
+            val intent = Intent(this, TelaInformacoesPessoaisAluno:: class.java)
+            startActivity(intent)
         }
 
         trainingData.setOnClickListener {
             // tela dados de treino
+            // val intent = Intent(this)
         }
 
         preferences.setOnClickListener {
             // tela preferencias
+            val intent = Intent(this, TelaPref:: class.java)
+            startActivity(intent)
         }
 
         support.setOnClickListener {
             // tela chat de suporte
+            // val intent = Intent(this)
         }
 
         logoutButton.setOnClickListener {
             Toast.makeText(this, "Você foi deslogado", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, TelaInicial:: class.java)
+            startActivity(intent)
             // adicionar lógica para voltar para a tela de login
         }
     }

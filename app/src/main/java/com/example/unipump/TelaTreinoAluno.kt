@@ -21,7 +21,7 @@ class TelaTreinoAluno : AppCompatActivity() {
         // 1. Acessar o BottomNavigationView
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        // 2. Concteinar como botão?
+        // 2. Concteinar como botão
         ficha_1 = findViewById(R.id.container_ficha1)
 
         ficha_1.setOnClickListener {
@@ -39,6 +39,15 @@ class TelaTreinoAluno : AppCompatActivity() {
                 }
                 R.id.nav_treinos -> {
                     // Ir para a tela de treinos
+                    true
+                }
+                R.id.nav_config -> {
+                    val intent = Intent(this, TelaConfig:: class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.nav_chat -> {
+                    // val intent = Intent(this, )
                     true
                 }
                 else -> false

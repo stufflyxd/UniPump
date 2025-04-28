@@ -10,14 +10,13 @@
 
         <!-- Back Button -->
         <ImageButton
-            android:id="@+id/back_button"
+            android:id="@+id/SetaVoltarTelaCriarFicha"
             android:layout_width="48sp"
             android:layout_height="48sp"
             android:layout_margin="16dp"
+            android:contentDescription="@string/seta_voltar"
             android:src="@drawable/ic_arrow_back"
-            android:contentDescription="Voltar"
-            android:background="@color/black"
-            app:tint="@color/white" />
+            android:backgroundTint="@color/black"/>
 
         <!-- Title -->
         <TextView

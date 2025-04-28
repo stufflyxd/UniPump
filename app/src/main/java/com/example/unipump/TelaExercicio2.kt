@@ -10,19 +10,19 @@ import androidx.core.view.WindowInsetsCompat
 
 class TelaExercicio2 : AppCompatActivity() {
 
-    private lateinit var proximo: Button
+    private lateinit var voltar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_exercicio2)
 
-        proximo = findViewById(R.id.btnProximo)
+        voltar = findViewById(R.id.btnVoltar)
         onClickFinalizar()
     }
 
 
     private fun onClickFinalizar(){
-        proximo.setOnClickListener {
+        voltar.setOnClickListener {
             val intent = Intent(this, TelaExercicioFinalizado:: class.java)
             startActivity(intent)
         }

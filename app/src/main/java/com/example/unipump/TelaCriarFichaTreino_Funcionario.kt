@@ -45,10 +45,8 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
 
         if (tipoFicha == "A") {
             textLetraFicha.text = "A"  // Atualiza o TextView letraFicha com "A"
-            intent.putExtra("ficha" , "A")
         } else if (tipoFicha == "B") {
             textLetraFicha.text = "B"  // Atualiza o TextView letraFicha com "A"
-            intent.putExtra("ficha" , "B")
         }
 
         /*when (tipoFicha) {
@@ -77,6 +75,10 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
     }
 
     fun configurarEventos() {
+
+        val tipoFicha = intent.getStringExtra("ficha")
+        val nomeFicha = intent.getStringExtra("nomeFicha")
+
         // Definindo o clique do botão de voltar
         btnSetaVoltar.setOnClickListener {
             onBackPressed() // Isso chama o comportamento de voltar para a tela anterior
@@ -84,14 +86,35 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
 
         btnAddExercio1.setOnClickListener {
             val intent = Intent(this, TelaCriarFichaTreino2_Funcionario::class.java)
+            if (tipoFicha == "A") {
+                intent.putExtra("ficha" , "A")
+                intent.putExtra("nomeFicha", "Costas e Bíceps")
+            } else if (tipoFicha == "B"){
+                intent.putExtra("ficha" , "B")
+                intent.putExtra("nomeFicha", "Peito e Tríceps")
+            }
             startActivity(intent)
         }
         btnAddExercio2.setOnClickListener {
             val intent = Intent(this, TelaCriarFichaTreino2_Funcionario::class.java)
+            if (tipoFicha == "A") {
+                intent.putExtra("ficha" , "A")
+                intent.putExtra("nomeFicha", "Costas e Bíceps")
+            } else if (tipoFicha == "B"){
+                intent.putExtra("ficha" , "B")
+                intent.putExtra("nomeFicha", "Peito e Tríceps")
+            }
             startActivity(intent)
         }
         btnAddExercio3.setOnClickListener {
             val intent = Intent(this, TelaCriarFichaTreino2_Funcionario::class.java)
+            if (tipoFicha == "A") {
+                intent.putExtra("ficha" , "A")
+                intent.putExtra("nomeFicha", "Costas e Bíceps")
+            } else if (tipoFicha == "B"){
+                intent.putExtra("ficha" , "B")
+                intent.putExtra("nomeFicha", "Peito e Tríceps")
+            }
             startActivity(intent)
         }
     }

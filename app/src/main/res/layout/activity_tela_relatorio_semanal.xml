@@ -7,20 +7,20 @@
 
     <!-- Botão Voltar -->
     <ImageButton
-        android:id="@+id/button_back"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:id="@+id/SetaVoltarTelaCriarFicha"
+        android:layout_width="48sp"
+        android:layout_height="48sp"
         android:layout_margin="16dp"
-        android:src="@drawable/back_button"
-        android:contentDescription="Voltar a tela"
-        android:importantForAccessibility="yes" />
+        android:contentDescription="@string/seta_voltar"
+        android:src="@drawable/ic_arrow_back"
+        android:backgroundTint="@color/black"/>
 
     <!-- Título -->
     <TextView
         android:id="@+id/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button_back"
+        android:layout_below="@id/SetaVoltarTelaCriarFicha"
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:text="Relatorio da semana"

@@ -1,6 +1,5 @@
 package com.example.unipump
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View.generateViewId
 import android.view.ViewGroup
@@ -10,8 +9,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
 
@@ -25,6 +22,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
     lateinit var serie1: LinearLayout
     lateinit var serie2: LinearLayout
     lateinit var serie3: LinearLayout
+    lateinit var conteinerSerie: LinearLayout
 
     private var serieCount = 3 // Começa com 3 porque já temos 3 séries iniciais
 
@@ -43,18 +41,30 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
         serie1 = findViewById(R.id.serie1)
         serie2 = findViewById(R.id.serie2)
         serie3 = findViewById(R.id.serie3)
+        conteinerSerie = findViewById(R.id.conteinerSerie)
 
         configurarEventos()
 
+
         val tipoFicha = intent.getStringExtra("ficha")
         val nomeFicha = intent.getStringExtra("nomeFicha")
+        // Verificando o tipo de ficha e alterando os TextViews
 
-        when (tipoFicha) {
-            "A" -> textLetraFicha.text = "A"
-            "B" -> textLetraFicha.text = "B"
+        if (tipoFicha == "A") {
+            textLetraFicha.text = "A"  // Atualiza o TextView letraFicha com "A"
+        } else if (tipoFicha == "B") {
+            textLetraFicha.text = "B"  // Atualiza o TextView letraFicha com "A"
         }
 
+        /*when (tipoFicha) {
+            "A" -> textLetraFicha.text = "A" // Se for A, exibe A
+            "B" -> textLetraFicha.text = "B"  // Se for B, exibe B
+        }*/
+
+        // Atualiza o TextView nomeFicha com o nome recebido da Intent
         textNomeFicha.text = nomeFicha
+        intent.getStringExtra(nomeFicha)
+
     }
 
     fun configurarEventos() {
@@ -82,10 +92,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
     fun excluirLinearLayout(linearLayout: LinearLayout) {
         (linearLayout.parent as? ViewGroup)?.removeView(linearLayout)
     }
-
     private fun adicionarNovaSerie() {
-        serieCount++
-
         // Cria um novo LinearLayout com as mesmas propriedades das séries existentes
         val novaSerie = LinearLayout(this).apply {
             layoutParams = LinearLayout.LayoutParams(
@@ -114,7 +121,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
             id = generateViewId()
         }
 
-        // Adiciona o número da série
+        // Adiciona o número da série (pode ser retirado caso não queira usar a contagem)
         TextView(this).apply {
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -122,7 +129,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
             ).apply {
                 marginEnd = resources.getDimensionPixelSize(R.dimen.serie_number_margin)
             }
-            text = serieCount.toString()
+            text = (conteinerSerie.childCount + 1).toString()  // Número da série com base no número de filhos no container
             setTextColor(resources.getColor(R.color.white, null))
             textSize = 28f
             novaSerie.addView(this)
@@ -216,13 +223,11 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
             contentDescription = "Botão de excluir série"
             setOnClickListener {
                 excluirLinearLayout(novaSerie)
-                serieCount--
             }
             novaSerie.addView(this)
         }
 
-        // Adiciona a nova série ao container pai (o LinearLayout que contém todas as séries)
-        val containerPai = findViewById<LinearLayout>(R.id.serie1).parent as ViewGroup
-        containerPai.addView(novaSerie, containerPai.indexOfChild(findViewById(R.id.serie3)) + 1)
+        // Adiciona a nova série diretamente ao container
+        conteinerSerie.addView(novaSerie)
     }
 }

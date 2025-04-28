@@ -11,7 +11,7 @@ class TelaSobre : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_sobre)
 
-        val backButton: ImageView = findViewById(R.id.back_button)
+        val backButton: ImageView = findViewById(R.id.SetaVoltarTelaCriarFicha)
 
         backButton.setOnClickListener {
             finish()

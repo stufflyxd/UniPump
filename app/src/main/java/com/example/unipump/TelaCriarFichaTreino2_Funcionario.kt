@@ -191,6 +191,7 @@ class TelaCriarFichaTreino2_Funcionario : AppCompatActivity() {
                 resources.getDimensionPixelSize(R.dimen.field_height)
             ).apply {
                 marginEnd = resources.getDimensionPixelSize(R.dimen.time_margin)
+
             }
             background = resources.getDrawable(R.drawable.rounded_edittext, null)
             backgroundTintList = resources.getColorStateList(R.color.field_background, null)

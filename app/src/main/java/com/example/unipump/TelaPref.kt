@@ -1,5 +1,6 @@
 package com.example.unipump
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.ImageButton
@@ -7,6 +8,7 @@ import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaPref : AppCompatActivity() {
 
@@ -14,11 +16,13 @@ class TelaPref : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_pref)
 
-        val backButton: ImageView = findViewById(R.id.back_button)
+        val backButton: ImageView = findViewById(R.id.SetaVoltarTelaCriarFicha)
         val languageOption: TextView = findViewById(R.id.language_option)
         val themeSwitch: Switch = findViewById(R.id.theme_switch)
         val aboutOption: TextView = findViewById(R.id.about_option)
         val clearCacheOption: TextView = findViewById(R.id.clear_cache_option)
+
+
 
         // Botao voltar
         backButton.setOnClickListener {
@@ -27,7 +31,8 @@ class TelaPref : AppCompatActivity() {
 
         // Idioma
         languageOption.setOnClickListener {
-            Toast.makeText(this, "Idioma selecionado", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, TelaIdioma::class.java)
+            startActivity(intent)
             // abrir uma de selecionar o idioma
         }
 
@@ -44,7 +49,8 @@ class TelaPref : AppCompatActivity() {
 
         // sobre
         aboutOption.setOnClickListener {
-            // abrir tela de sobre o app
+            val intent = Intent(this, TelaSobre::class.java)
+            startActivity(intent)
         }
 
         // limpar cache
@@ -52,5 +58,11 @@ class TelaPref : AppCompatActivity() {
             Toast.makeText(this, "Cache limpo", Toast.LENGTH_SHORT).show()
             // implementar a limpeza do cache
         }
+
+
+
+
+
+
     }
 }

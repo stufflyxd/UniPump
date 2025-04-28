@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaConfig : AppCompatActivity() {
 
@@ -23,14 +24,12 @@ class TelaConfig : AppCompatActivity() {
         val support: TextView = findViewById(R.id.support)
         val logoutButton: TextView = findViewById(R.id.deslogar)
 
-        // Set click listeners
-        editProfile.setOnClickListener {
-            // abrir tela de edição
-        }
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
 
         personalInfo.setOnClickListener {
             // abrir tela de informaões pessoais
-            val intent = Intent(this, TelaInformacoesPessoaisAluno:: class.java)
+            val intent = Intent(this, TelaInformacoesPessoaisAluno::class.java)
             startActivity(intent)
         }
 
@@ -41,7 +40,7 @@ class TelaConfig : AppCompatActivity() {
 
         preferences.setOnClickListener {
             // tela preferencias
-            val intent = Intent(this, TelaPref:: class.java)
+            val intent = Intent(this, TelaPref::class.java)
             startActivity(intent)
         }
 
@@ -52,9 +51,37 @@ class TelaConfig : AppCompatActivity() {
 
         logoutButton.setOnClickListener {
             Toast.makeText(this, "Você foi deslogado", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, TelaInicial:: class.java)
+            val intent = Intent(this, TelaInicial::class.java)
             startActivity(intent)
             // adicionar lógica para voltar para a tela de login
+        }
+
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_inicio -> {
+                    val intent = Intent(this, TelaPrincipalAluno::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_treinos -> {
+                    val intent = Intent(this, TelaTreinoAluno::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_config -> {
+                    true
+                }
+
+                R.id.nav_chat -> {
+                    // val intent = Intent(this, )
+                    true
+                }
+
+                else -> false
+            }
         }
     }
 }
